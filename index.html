@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PPPGamer Blog</title>
+  <style>
+    :root {
+      --primary-color: #1e1e2f;
+      --accent-color: #ff4757;
+      --bg-color: #f5f6fa;
+      --text-color: #2f3542;
+      --card-bg: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #dcdde1;
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .post {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+    }
+
+    .post img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 1rem;
+    }
+
+    .post h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      color: var(--accent-color);
+    }
+
+    .post p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--primary-color);
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .post-content p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PPPGamer</h1>
+    <p>Your daily dose of gaming updates</p>
+  </header>
+
+  <section class="posts" id="blogPosts">
+    <!-- Posts will be inserted here by JavaScript -->
+  </section>
+
+  <footer>
+    &copy; 2025 PPPGamer. All rights reserved.
+  </footer>
+
+  <script>
+    const posts = [
+      {
+        title: "Elden Ring: Shadow of the Erdtree DLC",
+        image: "Elden.avif",
+        description: "Explore the new lands of Shadow with deadly bosses and deep lore."
+      },
+      {
+        title: "GTA VI Leak Overview",
+        image: "https://via.placeholder.com/600x300?text=GTA+VI",
+        description: "Leaks suggest Vice City is back with a dynamic weather system."
+      },
+      {
+        title: "Call of Duty: Black Ops Gulf War Reveal",
+        image: "https://via.placeholder.com/600x300?text=COD+Gulf+War",
+        description: "Set in the 90s, the latest Black Ops takes realism to a new level."
+      },
+      {
+        title: "Starfield First Impressions",
+        image: "https://via.placeholder.com/600x300?text=Starfield",
+        description: "Bethesda's ambitious space RPG is finally here — and it's massive."
+      },
+      {
+        title: "Fortnite Chapter 5: What’s New?",
+        image: "https://via.placeholder.com/600x300?text=Fortnite",
+        description: "From new map changes to mythic items — here’s what’s hot in Chapter 5."
+      },
+      {
+        title: "Minecraft 1.21 Update Breakdown",
+        image: "https://via.placeholder.com/600x300?text=Minecraft",
+        description: "New biomes, new mobs, and more crafting! Let’s dig into the changes."
+      },
+      {
+        title: "Cyberpunk 2077: Phantom Liberty Review",
+        image: "https://via.placeholder.com/600x300?text=Cyberpunk+2077",
+        description: "CDPR delivers a worthy expansion that fixes and elevates the base game."
+      },
+      {
+        title: "Valorant New Agent: Smoke & Mirrors",
+        image: "https://via.placeholder.com/600x300?text=Valorant",
+        description: "The latest agent shakes up competitive play with unique utility."
+      },
+      {
+        title: "The Witcher 4 In Development",
+        image: "https://via.placeholder.com/600x300?text=Witcher+4",
+        description: "CDPR confirms a new saga with fresh characters and locations."
+      },
+      {
+        title: "League of Legends: Season 2025 Preview",
+        image: "https://via.placeholder.com/600x300?text=League+of+Legends",
+        description: "Big changes coming to ranked play, items, and champion balance."
+      }
+    ];
+
+    const blogContainer = document.getElementById('blogPosts');
+
+    posts.forEach(post => {
+      const postElement = document.createElement('div');
+      postElement.className = 'post';
+      postElement.innerHTML = `
+        <img src="${post.image}" alt="${post.title}" />
+        <div class="post-content">
+          <h3>${post.title}</h3>
+          <p>${post.description}</p>
+        </div>
+      `;
+      blogContainer.appendChild(postElement);
+    });
+  </script>
+
+</body>
+</html>
